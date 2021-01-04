@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userPictureOnly: boolean = false;
   user: any;
 
-  themes = [
+  /*themes = [
     {
       value: 'default',
       name: 'Light',
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     },
   ];
 
-  currentTheme = 'default';
+  currentTheme = 'default';*/
 
   userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
 
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;
+    // this.currentTheme = this.themeService.currentTheme;
 
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
@@ -63,12 +63,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
       )
       .subscribe((isLessThanXl: boolean) => this.userPictureOnly = isLessThanXl);
 
-    this.themeService.onThemeChange()
-      .pipe(
-        map(({ name }) => name),
-        takeUntil(this.destroy$),
-      )
-      .subscribe(themeName => this.currentTheme = themeName);
+    // this.themeService.onThemeChange()
+    //   .pipe(
+    //     map(({ name }) => name),
+    //     takeUntil(this.destroy$),
+    //   )
+    //   .subscribe(themeName => this.currentTheme = themeName);
   }
 
   ngOnDestroy() {

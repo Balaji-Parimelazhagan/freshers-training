@@ -1,0 +1,162 @@
+
+<div class="row">
+  <div class="col-sm 12">
+    <nb-card>
+      <nb-card-body>
+        <div class="col-sm-3">
+          <input type="text" nbInput fullWidth shape="round" placeholder="Search Trainee">
+        </div>
+      </nb-card-body>    
+    </nb-card>
+  </div>
+</div>
+
+<div class="accordions-container row">
+  <div class="accordion-container col-12 col-sm 12 col-md-12 col-lg-12 col-xxxl-12">
+    <nb-accordion multi>
+      <!-- <nb-accordion-item>
+        <nb-accordion-item-header>
+         Balaji Parimelazhagan
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
+
+            <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+            <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+      
+            <ng-container [nbTreeGridColumnDef]="customColumn">
+              <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
+                {{customColumn}}
+              </th>
+              <td nbTreeGridCell *nbTreeGridCellDef="let row">
+                <ngx-fs-icon [kind]="row.data.kind" [expanded]="row.expanded"></ngx-fs-icon>
+                {{row.data[customColumn]}}
+              </td>
+            </ng-container>
+      
+            <ng-container *ngFor="let column of defaultColumns; let index = index"
+                          [nbTreeGridColumnDef]="column"
+                          [showOn]="getShowOn(index)">
+              <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
+                {{column}}
+              </th>
+              <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
+            </ng-container>
+      
+          </table>
+        </nb-accordion-item-body>
+      </nb-accordion-item> -->
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Jeff Osbert
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card>
+            <nb-card-header>
+              <div class="row show-grid">
+                <div class="col-md-4">Title</div>
+                <div class="col-md-1">Project</div>
+                <div class="col-md-1">Priority</div>
+                <div class="col-md-1">Assignee</div>
+                <div class="col-md-1">Due Date</div>
+                <div class="col-md-1">Time Spent</div>
+                <div class="col-md-1">Tech Stack</div>
+                <div class="col-md-1">Status</div>
+                <div class="col-md-1">Action</div>
+              </div>
+            </nb-card-header>
+            <nb-card-body>
+              <div class="row show-grid">
+                <div class="col-md-4">Update Page Creation</div>
+                <div class="col-md-1">iAssistant</div>
+                <div class="col-md-1"><i class="fas fa-arrow-up high"></i></div>
+                <div class="col-md-1">Yuvanath</div>
+                <div class="col-md-1">12/01/2021</div>
+                <div class="col-md-1">2d & 5hrs</div>
+                <div class="col-md-1">Angular</div>
+                <div class="col-md-1">In-progress</div>
+                <div class="col-md-1"><i class="fas fa-check"></i></div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Micheal Utred
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card>
+            <nb-card-header>
+              <div class="row show-grid">
+                <div class="col-md-4">Title</div>
+                <div class="col-md-1">Project</div>
+                <div class="col-md-1">Priority</div>
+                <div class="col-md-1">Assignee</div>
+                <div class="col-md-1">Due Date</div>
+                <div class="col-md-1">Time Spent</div>
+                <div class="col-md-1">Tech Stack</div>
+                <div class="col-md-1">Status</div>
+                <div class="col-md-1">Action</div>
+              </div>
+            </nb-card-header>
+            <nb-card-body>
+              <div class="row show-grid">
+                <div class="col-md-4">Update Page Creation</div>
+                <div class="col-md-1">iAssistant</div>
+                <div class="col-md-1"><i class="fas fa-arrow-up high"></i></div>
+                <div class="col-md-1">Yuvanath</div>
+                <div class="col-md-1">12/01/2021</div>
+                <div class="col-md-1">2d & 5hrs</div>
+                <div class="col-md-1">Angular</div>
+                <div class="col-md-1">In-progress</div>
+                <div class="col-md-1"><i class="fas fa-check"></i></div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+      
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Walter Escobar
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card>
+            <nb-card-header>
+              <div class="row show-grid">
+                <div class="col-md-4">Title</div>
+                <div class="col-md-1">Project</div>
+                <div class="col-md-1">Priority</div>
+                <div class="col-md-1">Assignee</div>
+                <div class="col-md-1">Due Date</div>
+                <div class="col-md-1">Time Spent</div>
+                <div class="col-md-1">Tech Stack</div>
+                <div class="col-md-1">Status</div>
+                <div class="col-md-1">Action</div>
+              </div>
+            </nb-card-header>
+            <nb-card-body>
+              <div class="row show-grid">
+                <div class="col-md-4">Update Page Creation</div>
+                <div class="col-md-1">iAssistant</div>
+                <div class="col-md-1"><i class="fas fa-arrow-up high"></i></div>
+                <div class="col-md-1">Yuvanath</div>
+                <div class="col-md-1">12/01/2021</div>
+                <div class="col-md-1">2d & 5hrs</div>
+                <div class="col-md-1">Angular</div>
+                <div class="col-md-1">In-progress</div>
+                <div class="col-md-1"><i class="fas fa-check"></i></div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+    </nb-accordion>
+  </div>
+</div>

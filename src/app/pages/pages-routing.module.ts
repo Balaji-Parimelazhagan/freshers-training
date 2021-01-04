@@ -6,15 +6,41 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { TraineesComponent } from './trainees/trainees.component';
+import { NewTaskComponent } from './new-task/new-task.component';
+import { NewProjectComponent } from './new-project/new-project.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { AssessmentsComponent } from './assessments/assessments.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
     {
+      path: 'new-task',
+      component: NewTaskComponent,
+    },
+    {
+      path: 'new-project',
+      component: NewProjectComponent,
+    },
+    {
       path: 'trainees',
       component: TraineesComponent,
     },
+    {
+      path: 'tasks',
+      component: TasksComponent,
+    },
+    {
+      path: 'projects',
+      component: ProjectsComponent,
+    },
+    {
+      path: 'assessments',
+      component: AssessmentsComponent,
+    }
+    /*,
     {
       path: 'dashboard',
       component: ECommerceComponent,
@@ -72,10 +98,10 @@ const routes: Routes = [{
       path: 'miscellaneous',
       loadChildren: () => import('./miscellaneous/miscellaneous.module')
         .then(m => m.MiscellaneousModule),
-    },
+    }*/,
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'trainees',
       pathMatch: 'full',
     },
     {

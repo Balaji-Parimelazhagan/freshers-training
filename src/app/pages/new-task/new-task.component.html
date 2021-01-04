@@ -1,0 +1,82 @@
+<div class="col-sm-8">
+  <nb-card>
+    <nb-card-header>Create New Task</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="taskTitle" class="label">Title</label>
+            <input type="text" nbInput fullWidth id="taskTitle" placeholder="Task Title">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="taskDescription" class="label">Description</label>
+            <textarea rows="2" nbInput fullWidth id="taskDescription" placeholder="Task Description"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="assignee" class="label">Assignee</label>
+            <input type="text" nbInput fullWidth id="assignee" placeholder="Assignee">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group select-input">
+            <nb-card-header>Priority</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">Low</nb-option>
+              <nb-option value="2">Medium</nb-option>
+              <nb-option value="3">High</nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <label for="taskDueDate" class="label">Due Date</label>
+          <input nbInput placeholder="Due Date" id="taskDueDate" [nbDatepicker]="formpicker">
+          <nb-datepicker #formpicker></nb-datepicker>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="project" class="label">Project</label>
+            <input type="text" nbInput fullWidth id="project" placeholder="Project">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group select-input">
+            <nb-card-header>Status</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">Open</nb-option>
+              <nb-option value="2">In-Progress</nb-option>
+              <nb-option value="3">Completed</nb-option>
+              <nb-option value="4">On-Hold</nb-option>
+            </nb-select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="techStack" class="label">Tech Stack</label>
+            <input type="text" nbInput fullWidth id="techStack" placeholder="Tech Stack">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="taskReference" class="label">Reference</label>
+            <input type="text" nbInput fullWidth id="taskReference" placeholder="Paste the refernce URL here">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" nbButton>Submit</button>
+    </nb-card-body>
+  </nb-card>
+</div>

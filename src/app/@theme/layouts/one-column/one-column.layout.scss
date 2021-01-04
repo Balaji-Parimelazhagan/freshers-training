@@ -6,4 +6,29 @@
   .menu-sidebar ::ng-deep .scrollable {
     padding-top: nb-theme(layout-padding-top);
   }
+  .menu-sidebar ::ng-deep .main-container.main-container-fixed {
+    width: 12rem;
+  }
+  .menu-sidebar {
+    width: 12rem;
+    ::ng-deep nb-icon {
+      margin-left: 2px;
+    }
+  }
+  .menu-sidebar.expanded {
+    width: 12rem;
+    ::ng-deep nb-icon {
+      margin-left: 2px;
+    }
+  }
+  .menu-sidebar.compacted {
+    width: 4rem;
+    ::ng-deep nb-icon {
+      margin: 2px 0 0 0;
+    }
+  }
+  
+  nb-sidebar, nb-sidebar > div.main-container {
+    transition: width 0.3s;
+  }
 }

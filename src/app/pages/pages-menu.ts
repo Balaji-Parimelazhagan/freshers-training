@@ -1,12 +1,51 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+  
+  {
+    title: 'New',
+    icon: 'plus-outline',
+    children: [
+      {
+        title: 'Task',
+        link: '/pages/new-task',
+      },
+      {
+        title: 'Project',
+        link: '/pages/new-project',
+      },
+      {
+        title: 'Trainee',
+        link: '/pages/new-trainee',
+      },
+      {
+        title: 'Team',
+        link: '/pages/new-team',
+      },
+    ],
+  },
   {
     title: 'Trainees',
-    icon: 'users',
+    icon: 'people-outline',
     link: '/pages/trainees',
     home: true,
   },
+  {
+    title: 'Tasks',
+    icon: 'checkmark-square-outline',
+    link: '/pages/tasks',
+    home: true,
+  },
+  {
+    title: 'Projects',
+    icon: 'briefcase-outline',
+    link: '/pages/projects',
+  },
+  {
+    title: 'Assessments',
+    icon: 'clipboard-outline',
+    link: '/pages/assessments',
+  }/*,
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
@@ -248,5 +287,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
+  },*/
 ];

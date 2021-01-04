@@ -1,0 +1,69 @@
+<div class="col-sm-8">
+    <nb-card>
+      <nb-card-header>Create New Project</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="projectTitle" class="label">Title</label>
+              <input type="text" nbInput fullWidth id="projectTitle" placeholder="Project Title">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="projectDescription" class="label">Description</label>
+              <textarea rows="2" nbInput fullWidth id="projectDescription" placeholder="Project Description"></textarea>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="projectManager" class="label">Manager(s)</label>
+              <input type="text" nbInput fullWidth id="projectManager" placeholder="Manager Name">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <label for="projectStartDate" class="label">Start Date</label>
+            <input nbInput placeholder="Start Date" id="projectStartDate" [nbDatepicker]="formpicker">
+            <nb-datepicker #formpicker></nb-datepicker>
+          </div>
+          <div class="col-sm-3">
+            <label for="projectDueDate" class="label">Expected Submission Date</label>
+            <input nbInput placeholder="Due Date" id="projectDueDate" [nbDatepicker]="formpicker">
+            <nb-datepicker #formpicker></nb-datepicker>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="techStack" class="label">Tech Stack(s)</label>
+              <input type="text" nbInput fullWidth id="techStack" placeholder="Tech Stack">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="teamMembers" class="label">Team Member(s)</label>
+              <input type="text" nbInput fullWidth id="teamMembers" placeholder="Choose Team Members">
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group select-input">
+              <nb-card-header>Status</nb-card-header>
+              <nb-select disabled selected="1">
+                <nb-option value="1">Active</nb-option>
+                <nb-option value="2">Closed</nb-option>
+              </nb-select>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" nbButton>Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
