@@ -1,0 +1,36 @@
+.row {
+    text-align: center;
+  }
+  
+  .high {
+    color: red;
+  }
+  
+  .medium {
+    color: yellow;
+  }
+  
+  .low {
+    color: blue;
+  }
+  
+.floating-tool-bar {
+  margin-left: auto;
+  
+  nb-select {
+    margin-left: 10px;
+  }
+  .new-action-btn {
+    background: #30266C;
+    border-color: #FFDF70;
+    color: #FFDF70;
+  }
+}
+  
+  .select-input {
+    margin-top: 1.8rem;
+    nb-card-header {
+        color: #8f9bb3;
+        font-weight: 700;
+    }
+  }

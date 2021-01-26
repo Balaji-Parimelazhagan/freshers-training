@@ -1,0 +1,52 @@
+<nb-card>
+  <nb-card-header class="assmnt-header">
+    <div class="row col-12 assessment-title">{{assessment.title}}</div>
+    <div class="row col-12">
+      <div class="col-8 description">
+        <span class="question">Description : </span>{{assessment.description}}
+      </div>
+      <div class="other-details col-4">
+        <div class="m-t-10px">
+          <span class="question">Held-On :</span> {{assessment.heldOn}}
+        </div>
+        <div class="m-t-10px">
+          <span class="question">Tech-Stack :</span> {{assessment.assessedSkill}}
+        </div>
+        <div class="m-t-10px mentor-name">
+          <span class="question">Mentor :</span>
+          <!-- <img src="../../../assets/images/kate.png"> -->
+          {{assessment.mentor}}
+        </div>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body class="trainees-container">
+    <nb-tabset>
+      <nb-tab tabTitle="Trainees View">
+        <nb-card class="assmnt-stats-card"  *ngFor="let trainee of assessment.trainees; let i = index">
+          <nb-card-header  class="assmnt-stats-card-header row">
+            <div class="col-3">
+              <img src="{{trainee.image}}"  class="trainee-image">
+            </div>
+            <div class="trainee-details col-9">
+              <div class="trainee-name row">{{trainee.name}}</div>
+              <div class="trainee-team row"><span class="question">Team : &nbsp;</span>{{trainee.team}}</div>
+              <div class="trainee-id row"><span class="question">Emp-id : &nbsp;</span> {{trainee.id}}</div>
+            </div>
+          </nb-card-header>
+          <nb-card-body class="assmnt-stats-card-body">
+            <nb-progress-bar [value]="+metric.rating * 10" status="info"  *ngFor="let metric of trainee.metrics; let j = index">{{metric.title}}</nb-progress-bar>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="Metrics View">
+        <nb-card class="assmnt-stats-card metrics-view-card"  *ngFor="let metric of assessment.metrics; let k = index">
+        <nb-card-header  class="metric-view-trainee-name row col-12">{{metric.name}}</nb-card-header>
+        <nb-card-body class="assmnt-stats-card-body">
+          <nb-progress-bar [value]="+trainee.rating * 10" status="info"  *ngFor="let trainee of metric.trainees; let l = index">{{trainee.name}}</nb-progress-bar>
+        </nb-card-body>
+      </nb-card>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

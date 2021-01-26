@@ -1,0 +1,75 @@
+<form [formGroup]="createTeamForm" (ngSubmit)="onSubmit()">
+  <div class="col-sm-8 center">
+    <nb-card>
+      <nb-card-header>Create New Team</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="teamTitle" class="label">Title</label>
+              <input type="text" nbInput fullWidth id="teamTitle" placeholder="Team Title" formControlName="teamTitle">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="teamMentor" class="label">Mentor(s)</label>
+              <ng-select formControlName="teamMentors"
+                [items]="mentors"
+                bindLabel="name"
+                bindValue="id"
+                appendTo="body"
+                multiple="true"
+                placeholder="Choose Mentor(s)"
+                [(ngModel)]="selectedMentors">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="trainers" class="label">Trainer(s)</label>
+              <ng-select formControlName="trainers"
+                [items]="trainers"
+                bindLabel="name"
+                bindValue="id"
+                appendTo="body"
+                multiple="true"
+                placeholder="Choose Trainer(s)"
+                [(ngModel)]="selectedTrainers">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="teamMembers" class="label">Team Member(s)</label>
+              <ng-select formControlName="teamMembers"
+                [items]="teamMembers"
+                bindLabel="name"
+                bindValue="id"
+                appendTo="body"
+                multiple="true"
+                placeholder="Choose Team Members"
+                [(ngModel)]="selectedTeamMembers">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <label for="teamStartDate" class="label">Start Date</label>
+              <input nbInput placeholder="Start Date" id="teamStartDate" [nbDatepicker]="formpicker" formControlName="teamStartDate">
+              <nb-datepicker #formpicker></nb-datepicker>
+            </div>
+          </div>
+        </div>
+  
+        <button type="submit" nbButton>Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  
+</form>

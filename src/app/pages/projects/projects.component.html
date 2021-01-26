@@ -1,0 +1,47 @@
+<nb-card class="col-sm-6 floating-tool-bar">
+  <nb-card-body>
+    <div class="row">
+      <div class="col-5">
+        <input nbInput fullWidth shape="round" placeholder="Search Project">
+      </div>
+      <div class="col-4">
+        <label for="filter">Filter By:</label>
+        <nb-select selected="1" id="filter">
+          <nb-option value="1">Team</nb-option>
+          <nb-option value="2">Batch</nb-option>
+          <nb-option value="3">Trainee</nb-option>
+        </nb-select>
+      </div>
+      <div class="col-3">
+        <button nbButton  routerLink="../new-project"class="status-primary new-action-btn">New Project</button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+    <nb-card-header>
+    <div class="row show-grid">
+        <div class="col-md-3">Title</div>
+        <div class="col-md-2">Manager(s)</div>
+        <div class="col-md-2">Team Members</div>
+        <div class="col-md-2">Tech Stacks</div>
+        <div class="col-md-1">Started On</div>
+        <div class="col-md-1">Status</div>
+        <div *ngIf="role !== 'trainee'" class="col-md-1">Action</div>
+    </div>
+    </nb-card-header>
+    <nb-card-body class="row show-grid" *ngFor="let project of projects">
+      <div class="col-md-3">{{project.title}}</div>
+      <div class="col-md-2">{{project.managers}}</div>
+      <div class="col-md-2">{{project.members}}</div>
+      <div class="col-md-2">{{project.techStacks}}</div>
+      <div class="col-md-1">{{project.startDate}}</div>
+      <div class="col-md-1">{{project.status}}</div>
+      <div class="col-md-1"><i class="fas fa-check"></i></div>
+    </nb-card-body>
+    
+    <nb-card-body class="row show-grid" *ngIf="!projects || projects.length == 0">
+      <div class="col-md-12">No projects to display!. To create one <a routerLink="../new-project">click here</a></div>
+    </nb-card-body>
+</nb-card>

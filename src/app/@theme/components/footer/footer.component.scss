@@ -5,6 +5,7 @@
 @include nb-install-component() {
   width: 100%;
   display: flex;
+  height: 2rem;
   justify-content: space-between;
   align-items: center;
 
@@ -20,6 +21,10 @@
         color: nb-theme(text-basic-color);
       }
     }
+  }
+  
+  nb-layout-footer nav {
+    padding: 0.5rem;
   }
 
   @include media-breakpoint-down(is) {

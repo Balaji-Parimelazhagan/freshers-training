@@ -1,0 +1,51 @@
+<nb-card>
+  <nb-card-header class="assmnt-header">
+    <div class="row col-12 assessment-title">{{assessment.title}}</div>
+    <div class="row col-12 assessment-appendix">
+      <div class="col-8 description">
+        <span class="question">Description : </span>{{assessment.description}}
+      </div>
+      <div class="other-details col-4">
+        <div class="m-t-10px">
+          <span class="question">Held-On :</span> {{assessment.heldOn}}
+        </div>
+        <div class="m-t-10px">
+          <span class="question">Assessed-Skill :</span> {{assessment.assessedSkill}}
+        </div>
+        <div class="m-t-10px mentor-name">
+          <span class="question">Mentor :</span>
+          <!-- <img src="../../../assets/images/kate.png"> -->
+          {{assessment.mentor}}
+        </div>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <nb-card class="col-md-12 m-auto rating-container">
+      <nb-card-header class="row rating-header show-grid">
+        <div class="col-md-1">Trainee-id</div>
+        <div class="col-md-3">Trainee</div>
+        <div class="col-md-1">Metric-1</div>
+        <div class="col-md-1">Metric-2</div>
+        <div class="col-md-1">Metric-3</div>
+        <div class="col-md-1">Metric-4</div>
+        <div class="col-md-1">Metric-5</div>
+        <div class="col-md-1">Total Ratings</div>
+        <div class="col-md-1">Comments</div>
+        <div class="col-md-1">Save</div>
+      </nb-card-header>
+      <nb-card-body class="row trainee show-grid" *ngFor="let assessmentDetail of assessment.traineeAssmntsDetail; let i = index">
+        <div class="col-md-1">{{assessmentDetail.traineeId}}</div>
+        <div class="col-md-3">{{assessmentDetail.traineeName}}</div>
+        <div class="col-md-1" contenteditable="true" (blur)="updateAsssmntRating(i, 'metric_1', $event)" >{{assessmentDetail.metric_1.rating}}</div>
+        <div class="col-md-1" contenteditable="true" (blur)="updateAsssmntRating(i, 'metric_2', $event)" >{{assessmentDetail.metric_2.rating}}</div>
+        <div class="col-md-1" contenteditable="true" (blur)="updateAsssmntRating(i, 'metric_3', $event)" >{{assessmentDetail.metric_3.rating}}</div>
+        <div class="col-md-1" contenteditable="true" (blur)="updateAsssmntRating(i, 'metric_4', $event)" >{{assessmentDetail.metric_4.rating}}</div>
+        <div class="col-md-1" contenteditable="true" (blur)="updateAsssmntRating(i, 'metric_5', $event)" >{{assessmentDetail.metric_5.rating}}</div>
+        <div class="col-md-1" >{{assessmentDetail.totalRatings}}</div>
+        <div class="col-md-1" (click)="openCommentsModal(i)" ><i class="fas fa-edit cursor-pointer"></i></div>
+        <div class="col-md-1"><i class="fas fa-cloud-upload-alt cursor-pointer"></i></div>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-body>
+</nb-card>

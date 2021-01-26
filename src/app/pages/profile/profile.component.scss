@@ -1,0 +1,177 @@
+.profile-page {
+    padding: 0 !important;
+}
+
+.profile-pic {
+    background-image: url("../../../assets/images/nick.png");
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+    top: 60px;
+    border-radius: 50%;
+    margin-left: 10%;
+}
+
+.header {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.sub-header {
+    font-size: 0.8rem;
+    color: #0099ff;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.label-header {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    margin-left: 15px;
+    color: #737373;
+}
+
+.border-bottom {
+    margin-left: 10px;
+    width: 90%;
+}
+
+.li-design {
+    margin-top: 10px;
+}
+
+.work-label {
+    font-size: 0.6rem;
+    margin: 5px;
+    margin-bottom: 0;
+    color: #737373;
+    height: 15px;
+}
+
+.work-info {
+    font-size: 0.9rem;
+    color: black;
+    margin: 5px;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.sub-label {
+    font-size: 0.6rem;
+    margin: 5px;
+}
+
+.contact-info {
+    font-size: 1rem;
+    color: #0099ff;
+    margin: 5px;
+}
+
+.right-border {
+    border-right: 1px solid rgba(115, 115, 115, 0.5);
+}
+
+.top-border {
+    border-top: 1px solid rgba(115, 115, 115, 0.5);
+}
+
+.left-border {
+    border-left: 1px solid rgba(115, 115, 115, 0.5);
+}
+
+.bottom-border {
+    border-bottom: 1px solid rgba(115, 115, 115, 0.5);
+}
+
+.box-shadow {
+    box-shadow: 0 0.3rem 0.5rem 0 rgba(44, 51, 73, 0.1);
+    padding: 10px;
+    margin-top: 65px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.icon-alignment {
+    position: absolute;
+    margin: 7px;
+    color: #30266C;
+    opacity: 0.7;
+    font-size: 1.2rem;
+}
+
+.sub-icon-alignment {
+    margin: 10px;
+    margin-top: 15px;
+    margin-right: 0px;
+    margin-left: 40px;
+    color: #737373;
+    opacity: 0.7;
+    font-size: 1.5rem;
+}
+
+.top-margin-30 {
+   margin-top: 30px;
+}
+
+.bottom-margin-10 {
+    margin-bottom: 10px;
+ }
+.center {
+  margin: auto;
+}
+
+.profile-pic-background {
+    width: 96%;
+    height: 150px;
+    border-bottom: 2px solid #30266C;
+    background: #30266C;
+    margin-left: 15px;
+}
+.employee-info {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    position: absolute;
+    left: 260px;
+    top: 95px;
+    color: #FFDF70;
+    .designation {
+        font-size: 0.8rem;
+        color: #ffffff;
+        font-weight: lighter;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+}
+
+.social-network {
+    float: right;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    width: 125px;
+    a {
+      margin-left: 15px;
+    }
+}
+
+.icon-container {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 35px;
+    margin-top: 13px;
+    box-shadow: 0 0.3rem 0.5rem 0 rgba(44, 51, 73, 0.1);
+    margin-right: 15px;
+    background-color: whitesmoke;
+    border: 1px solid#FFDF70;
+}
+
+.project-label {
+    font-size: 0.9rem;
+    color: black;
+    margin: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+}

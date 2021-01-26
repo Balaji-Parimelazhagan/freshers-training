@@ -1,0 +1,37 @@
+<nb-card class="card" *ngFor="let team of teams; index as i;">
+  <nb-card-header  class="card-header">
+    <div class="three-image-container row">
+      <img src='{{team.imageOne}}'  class="left-image">
+      <img src='{{team.imageTwo}}'  class="center-image">
+      <img src='{{team.imageThree}}'  class="right-image">
+    </div>
+    <div class="team-name">
+      {{team.name}}
+    </div>
+  </nb-card-header>
+  <nb-card-body class="card-body">
+    <div class="atr-container row">
+      <div class="stream"><i class="fa fa-code" aria-hidden="true"></i>{{team.stream}}</div>
+    </div>
+    <div class="atr-container batch row">
+      <div>{{team.batch}} Batch</div>
+    </div>
+    <div class="mentors-container row">
+      <div class="atr-container mentor-title row">
+        <div class="mentors"><i class="fa fa-chalkboard-teacher" aria-hidden="true"></i>Mentors</div>
+      </div>
+      <div class="row justify-content">
+        <div class="mentor-name" *ngFor="let mentor of team.mentors; index as j;">{{mentor.name}}</div>
+      </div>
+    </div>
+    <div class="members-container row">
+      <div class="atr-container  member-title row">
+        <div class="members"><i class="fa fa-user-graduate" aria-hidden="true"></i>Members</div>
+      </div>
+      <div class="row justify-content">
+        <div class="member-name" *ngFor="let member of team.members; index as k;">{{member.name}}</div>
+      </div>
+
+    </div>
+  </nb-card-body>
+</nb-card>

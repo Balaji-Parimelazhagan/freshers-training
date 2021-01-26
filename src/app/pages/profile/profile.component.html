@@ -1,0 +1,203 @@
+<div class="col-md-8 center">
+    <nb-card>
+        <nb-card-body class="profile-page overflow-hidden">
+            <div class="row">
+                <div class="profile-pic-background">
+                    <div class="social-network">
+                        <a href="https://www.facebook.com/Ideas2IT" target="_blank" class="ion ion-social-facebook"></a>
+                        <a href="https://twitter.com/ideas2it" target="_blank" class="ion ion-social-twitter"></a>
+                        <a href="https://www.linkedin.com/company/ideas2it/" target="_blank" class="ion ion-social-linkedin"></a>
+                    </div>
+                    <div class="employee-info">
+                        <div>{{employee.name}}</div>
+                        <div class="designation">{{employee.designation}}</div>
+                    </div>
+                </div>
+                <div class="profile-pic"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 bottom-margin-10">
+                    <div class="box-shadow">
+                        <div class="row mb-2">
+                            <div class="icon-container">
+                                <nb-icon class="icon-alignment" icon="person-outline"></nb-icon>
+                            </div>
+                            <div class="mt-2">
+                                <div class="work-label">Employee Id </div>
+                                <div class="work-info">{{employee.empId}}</div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="icon-container">
+                                <nb-icon class="icon-alignment" icon="calendar-outline"></nb-icon>
+                            </div>
+                            <div class="mt-2">
+                                <div class="work-label">Experience </div>
+                                <div class="work-info">{{employee.experience}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nb-tabset>
+                        <nb-tab class="p-0 pt-2" tabTitle="Contact">
+                            <nb-card>
+                                <nb-card-body>	
+                                    <div class="row mb-2">    
+                                        <div class="icon-container">
+                                            <nb-icon class="icon-alignment" icon="phone-outline"></nb-icon>
+                                        </div>
+                                        <div class="mt-2">
+                                            <div class="work-label">Phone: </div>
+                                            <div class="work-info">{{employee.phoneNumber}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">    
+                                        <div class="icon-container">
+                                            <nb-icon class="icon-alignment" icon="email-outline"></nb-icon>
+                                        </div>
+                                        <div class="mt-2">
+                                            <div class="work-label">Email: </div>
+                                            <div class="work-info">{{employee.email}}</div>
+                                        </div>
+                                    </div>
+                                </nb-card-body>
+                              </nb-card>
+                        </nb-tab>
+                    </nb-tabset>
+                </div>
+            </div>
+            <div class="row ml-3 mr-3" *ngIf="isTrainer">
+                <nb-tabset class="w-100">
+                    <nb-tab class="p-0 pt-2" tabTitle="Projects">
+                        <nb-card>
+                            <nb-card-body>	
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let workHistory of employee.workHistories">
+                                        <div class="row">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="file-text-outline"></nb-icon>
+                                            </div>
+                                            <div class="project-label">
+                                                {{workHistory.project}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nb-card-body>
+                          </nb-card>
+                    </nb-tab>
+                </nb-tabset>
+                <nb-tabset class="w-100">
+                    <nb-tab class="p-0 pt-2" tabTitle="Tech Stack">
+                        <nb-card>
+                            <nb-card-body>	
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let techStack of employee.techStacks">
+                                        <div class="row">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="file-text-outline"></nb-icon>
+                                            </div>
+                                            <div class="project-label">
+                                                {{techStack}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nb-card-body>
+                          </nb-card>
+                    </nb-tab>
+                </nb-tabset>
+            </div>
+            <div class="row ml-3 mr-3" *ngIf="isTrainee">
+                <nb-tabset class="w-100">
+                    <nb-tab class="p-0 pt-2" tabTitle="Education">
+                        <nb-card>
+                            <nb-card-body>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row mb-2">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="person-outline"></nb-icon>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="work-label">College </div>
+                                                <div class="work-info">{{trainee.college}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row mb-2">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="person-outline"></nb-icon>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="work-label">CGPA </div>
+                                                <div class="work-info">{{trainee.CGPA}}</div>
+                                            </div>
+                                        </div>                      
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row mb-2">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="person-outline"></nb-icon>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="work-label">School </div>
+                                                <div class="work-info">{{trainee.school}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row mb-2">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="person-outline"></nb-icon>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="work-label">+2 Score </div>
+                                                <div class="work-info">{{trainee.mark}}</div>
+                                            </div>
+                                        </div>                      
+                                    </div>
+                                </div>
+
+                            </nb-card-body>
+                        </nb-card>
+                    </nb-tab>
+                    <nb-tab class="p-0 pt-2" tabTitle="Skills">
+                        <nb-card>
+                            <nb-card-body>	
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let skill of trainee.skills">
+                                        <div class="row">
+                                            <div class="icon-container">
+                                                <nb-icon class="icon-alignment" icon="file-text-outline"></nb-icon>
+                                            </div>
+                                            <div class="project-label">
+                                                {{skill}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nb-card-body>
+                          </nb-card>
+                    </nb-tab>
+                </nb-tabset>
+            </div>
+            <div class="row ml-3 mr-3">
+                <nb-tabset class="w-100">
+                    <nb-tab class="p-0 pt-2" tabTitle="Interview Results">
+                        <nb-card>
+                            <nb-card-body>
+                                <p>Interview Results</p>
+                            </nb-card-body>
+                        </nb-card>
+                    </nb-tab>
+                </nb-tabset>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
+

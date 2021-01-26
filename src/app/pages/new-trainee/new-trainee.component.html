@@ -1,0 +1,56 @@
+<form [formGroup]="createTraineeForm" (ngSubmit)="onSubmit()">
+  <div class="col-sm-8 center">
+    <nb-card>
+      <nb-card-header>Create New Trainee</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="batchTitle" class="label">Batch</label>
+              <ng-select formControlName="batchTitle"
+                [items]="batches"
+                bindLabel="name"
+                bindValue="id"
+                appendTo="body"
+                placeholder="Choose Batch"
+                [(ngModel)]="selectedBatch">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="streamInfo" class="label">Stream</label>
+              <ng-select formControlName="streamInfo"
+                [items]="streams"
+                bindLabel="name"
+                bindValue="id"
+                appendTo="body"
+                placeholder="Choose Stream"
+                [(ngModel)]="selectedStream">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="teamName" class="label">Team</label>
+              <ng-select formControlName="teamName"
+                [items]="teams"
+                bindLabel="name"
+                bindValue="id"
+                appendTo="body"
+                placeholder="Choose Team"
+                [(ngModel)]="selectedTeam">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+  
+        <button type="submit" nbButton>Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</form>
+

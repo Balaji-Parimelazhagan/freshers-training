@@ -1,0 +1,53 @@
+<!-- <nb-card class="col-sm-4 floating-tool-bar">
+  <nb-card-body>
+    <div class="row">
+      <div class="col-9">
+        <input nbInput fullWidth shape="round" placeholder="Search Task">
+      </div>
+      <div class="col-4">
+        <label for="filter">Filter By:</label>
+        <nb-select selected="1" id="filter">
+          <nb-option value="1">Team</nb-option>
+          <nb-option value="2">Batch</nb-option>
+          <nb-option value="3">Trainee</nb-option>
+        </nb-select>
+      </div>
+      <div class="col-3">
+        <button nbButton routerLink="../new-task" class="status-primary new-action-btn">New Task</button>
+      </div>
+    </div>
+  </nb-card-body>    
+</nb-card> -->
+  
+  <nb-card class="p-0 col-7 m-auto">
+  <nb-card-header class="col-6 p-0 floating-tool-bar">
+      <div class="row toolbar-container">
+        <div class="col-7">
+          <input nbInput fullWidth shape="round" class="search" placeholder="Search Task">
+        </div>
+        <div class="col-5">
+          <button nbButton routerLink="../new-task" class="status-primary new-action-btn">New Task</button>
+        </div>
+      </div>
+    </nb-card-header> 
+    <nb-card-body class='p-0'>
+      <nb-card  class="tasks-container col-12">
+        <nb-card-header  class="row tasks-header show-grid">
+          <div class="col-md-2">Task-id</div>
+          <div class="col-md-4">Title</div>
+          <div class="col-md-3">Typical Duration</div>
+          <div class="col-md-1">Stream</div>
+          <div class="col-md-2">Type</div>
+        </nb-card-header>
+        <nb-card-body class="row show-grid task" *ngFor="let task of tasks; index as i;">
+          <div class="col-md-2">TSK-{{+i + 1}}</div>
+          <div class="col-md-4">{{task.title}}</div>
+          <div class="col-md-3">{{task.typicalDuration}}</div>
+          <div class="col-md-1 uppr-cs">{{task.stream}}</div>
+          <div class="col-md-2 uppr-cs">{{task.type}}</div>
+        </nb-card-body>
+      </nb-card>
+    </nb-card-body>  
+  </nb-card>
+  
+

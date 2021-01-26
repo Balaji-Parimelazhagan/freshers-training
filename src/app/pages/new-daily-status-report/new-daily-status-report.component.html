@@ -1,0 +1,57 @@
+<form [formGroup]="createDSRForm" (ngSubmit)="onSubmit()">
+  <div class="col-sm-8 center">
+    <nb-card>
+      <nb-card-header>Create Daily Status</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+                <label for="tasks" class="label">Task</label>
+                <ng-select formControlName="dsrTask"
+                  [items]="tasks"
+                  bindLabel="name"
+                  bindValue="id"
+                  appendTo="body"
+                  multiple="true"
+                  placeholder="Choose Task"
+                  [(ngModel)]="selectedTask">
+                </ng-select>
+             </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="dsrDescription" class="label">Description</label>
+              <textarea nbTooltip="Please enter Status" rows="2" nbInput fullWidth id="dsrDescription" placeholder="Status Description" formControlName="dsrDescription"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="dsrGitLink" class="label">GitLink</label>
+              <input nbTooltip="Git Link" type="text" nbInput fullWidth id="dsrGitLink" placeholder="Git Link" formControlName="dsrGitLink">
+              <nb-datepicker #formpicker></nb-datepicker>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="dsrReference" class="label">Reference</label>
+              <textarea nbTooltip="Please enter Reference" rows="2" nbInput fullWidth id="dsrReference" placeholder="Status Reference" formControlName="dsrReference"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="dsrFileUpload" class="label">File Upload</label>
+                    <input nbInput type="file" fullWidth id="dsrFileUpload" formControlName="dsrFileUpload">
+                </div>
+            </div>
+        </div>
+        <button type="submit" nbButton>Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</form>
+

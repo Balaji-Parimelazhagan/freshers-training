@@ -1,0 +1,70 @@
+<form [formGroup]="createAssessmentForm" (ngSubmit)="onSubmit()">
+  <div class="col-sm-8 center">
+    <nb-card>
+      <nb-card-header>Create New Assessment</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="assessmentTitle" class="label">Title</label>
+              <input nbTooltip="Please enter Title" type="text" nbInput fullWidth id="assessmentTitle" formControlName="assessmentTitle" placeholder="Assessment Title">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="assessmentDescription" class="label">Description</label>
+              <textarea nbTooltip="Please enter Description" rows="2" nbInput fullWidth id="assessmentDescription" formControlName="assessmentDescription" placeholder="Assessment Description"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="trainees" class="label">Trainee (s)</label>
+              <ng-select
+                formControlName="trainees"
+                [items]="trainees"
+                bindLabel="name"
+                bindValue="name"
+                appendTo="body"
+                multiple="true"
+                placeholder="Choose Trainee(s)"
+                [(ngModel)]="selectedTrainees">
+              </ng-select>
+           </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="teams" class="label">Team (s)</label>
+              <ng-select
+                formControlName="teams"
+                [items]="teams"
+                bindLabel="name"
+                appendTo="body"
+                bindValue="name"
+                multiple="true"
+                placeholder="Choose Team(s)"
+                [(ngModel)]="selectedTeams">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="assessmentDate" class="label">Assessment Date</label>
+              <input nbInput fullWidth placeholder="Assesment Date" id="assessmentDate" formControlName="assessmentDate" [nbDatepicker]="formpicker">
+              <nb-datepicker #formpicker></nb-datepicker>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" nbButton>Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+</form>
+

@@ -1,0 +1,59 @@
+<nb-card class="col-sm-6 floating-tool-bar">
+  <nb-card-body>
+    <div class="row">
+      <div class="col-5">
+        <input nbInput fullWidth shape="round" placeholder="Search Trainee">
+      </div>
+      <div class="col-4">
+        <label for="filter">Filter By:</label>
+        <nb-select selected="3" id="filter">
+          <nb-option value="1">Team</nb-option>
+          <nb-option value="2">Batch</nb-option>
+          <nb-option value="3">Trainee</nb-option>
+        </nb-select>
+      </div>
+      <div class="col-3">
+        <button nbButton  routerLink="../new-trainee" class="status-primary new-action-btn">New Trainee</button>
+      </div>
+    </div>
+  </nb-card-body>    
+</nb-card>
+
+<div class="accordions-container row">
+  <div class="accordion-container col-12 col-sm 12 col-md-12 col-lg-12 col-xxxl-12">
+    <nb-accordion multi>
+      <nb-accordion-item  *ngFor="let trainee of trainees; let i = index">
+        <nb-accordion-item-header class="accordion-header">
+          <img src="{{trainee.image}}"  class="trainee-image">
+          <div class="trainee-name">{{trainee.name}}</div>
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card class="tasks-container">
+            <nb-card-header class="row tasks-header show-grid">
+              <div class="col-md-1">Task-ID</div>
+              <div class="col-md-4">Title</div>
+              <div class="col-md-1">Assigned By</div>
+              <div class="col-md-1">Assigned On</div>
+              <div class="col-md-1">Due On</div>
+              <div class="col-md-1">Completed On</div>
+              <div class="col-md-1">Stream</div>
+              <div class="col-md-1">Status</div>
+              <div class="col-md-1">Action</div>
+            </nb-card-header>
+            <nb-card-body class="row task show-grid" *ngFor="let task of trainee.tasks; let j = index">
+                <div class="col-md-1">{{task.id}}</div>
+                <div class="col-md-4">{{task.title}}</div>
+                <div class="col-md-1">{{task.assignedBy}}</div>
+                <div class="col-md-1">{{task.assignedOn}}</div>
+                <div class="col-md-1">{{task.dueDate}}</div>
+                <div class="col-md-1">{{task.completedDate}}</div>
+                <div class="col-md-1">{{task.stream}}</div>
+                <div class="col-md-1"><div [ngClass]="task.statusColor">{{task.status}}</div></div>
+                <div class="col-md-1"><i class="fas fa-check"></i></div>
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+  </div>
+</div>

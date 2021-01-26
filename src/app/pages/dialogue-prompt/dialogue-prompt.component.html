@@ -1,0 +1,10 @@
+<nb-card>
+    <nb-card-header>Comment</nb-card-header>
+    <nb-card-body>
+      <textarea #comment nbInput placeholder="Comment"></textarea>
+    </nb-card-body>
+    <nb-card-footer>
+      <button *ngIf="role === 'trainee'" class="cancel" nbButton (click)="cancel(comment.value)">Request</button>
+      <button *ngIf="role === 'trainer'" class="accept" nbButton (click)="submit(comment.value)">Approve</button>
+    </nb-card-footer>
+  </nb-card>

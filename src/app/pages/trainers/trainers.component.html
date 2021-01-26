@@ -1,0 +1,26 @@
+<nb-card class="card" *ngFor="let trainer of trainers">
+  <nb-card-header  class="card-header">
+    <div class="header-background"></div>
+    <img src='{{trainer.image}}'  class="person-image row">
+    <div class="experience">{{trainer.experience}}</div>
+    <div class="years">Years</div>
+    <div class="emp-id-container">
+      <div class="emp-id row"><i class="fa fa-fingerprint" aria-hidden="true"></i>{{trainer.empId}}</div>
+    </div>
+  </nb-card-header>
+  <nb-card-body class="card-body">
+    <div class="person-name row">{{trainer.name}}</div>
+    <div class="atr-container row">
+      <div class="designation"><i class="fa fa-laptop" aria-hidden="true"></i>{{trainer.designation}}</div>
+    </div>
+    <div class="atr-container row">
+      <div class="email"><i class="fa fa-at" aria-hidden="true"></i>{{trainer.email}}</div>
+    </div>
+    <div class="atr-container row">
+      <div class="phone-no"><i class="fa fa-phone" aria-hidden="true"></i>{{trainer.contactNo}}</div>
+    </div>
+    <div class="atr-container row">
+      <div class="stream"><i class="fa fa-code" aria-hidden="true"></i>{{trainer.stream}}</div>
+    </div>
+  </nb-card-body>
+</nb-card>

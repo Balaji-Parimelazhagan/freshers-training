@@ -1,0 +1,24 @@
+<nb-card>
+  <form [formGroup]="metricComments" (ngSubmit)="submit()">
+  <div class="header">COMMENTS <i class="fas fa-times float-right close-icon" (click)="cancel()"></i></div> 
+  <div class="body">
+    <div>
+      <label #name for="metricOneComments" class="label">Metric-1</label>
+      <textarea rows="2" nbInput fullWidth formControlName="metricOne" id="metricOneComments" placeholder="Metric 1 comments goes here"></textarea>
+    </div>
+    <div>
+      <label for="metricTwoComments" class="label">Metric-2</label>
+      <textarea rows="2" nbInput  formControlName="metricTwo" fullWidth id="metricTwoComments" placeholder="Metric 2 comments goes here"></textarea>
+    </div>
+    <div>
+      <label for="metricThreeComments" class="label">Metric-3</label>
+      <textarea rows="2" nbInput  formControlName="metricThree" fullWidth id="metricThreeComments" placeholder="Metric 3 comments goes here"></textarea>
+    </div>
+    <div>
+      <label for="metricFourComments" class="label">Metric-4</label>
+      <textarea rows="2" nbInput  formControlName="metricFour" fullWidth id="metricFourComments" placeholder="Metric 4 comments goes here"></textarea>
+    </div>
+    <button nbButton outline type="submit" class="submit" status="primary">Save</button>
+  </div>
+</form>
+</nb-card>

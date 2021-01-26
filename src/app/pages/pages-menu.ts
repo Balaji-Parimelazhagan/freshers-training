@@ -1,11 +1,77 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+
+  {
+    title: 'New',
+    icon: 'plus-outline',
+    children: [
+      {
+        title: 'Task',
+        link: '/pages/new-task',
+      },
+      {
+        title: 'Project',
+        link: '/pages/new-project',
+      },
+      {
+        title: 'Assessment',
+        link: '/pages/new-assessment',
+      },
+      {
+        title: 'Trainee',
+        link: '/pages/new-trainee',
+      },
+      {
+        title: 'Team',
+        link: '/pages/new-team',
+      },
+      {
+        title: 'Daily Status',
+        link: '/pages/new-daily-status',
+      }
+    ],
+  },
+  {
+    title: 'Trainees',
+    icon: 'people-outline',
+    link: '/pages/trainees',
+    home: true,
+  },
+  {
+    title: 'Trainers',
+    icon: 'people-outline',
+    link: '/pages/trainers',
+  },
+  {
+    title: 'Teams',
+    icon: 'people-outline',
+    link: '/pages/teams',
+  },
+  {
+    title: 'Tasks',
+    icon: 'checkmark-square-outline',
+    link: '/pages/tasks',
+  },
+  {
+    title: 'Projects',
+    icon: 'briefcase-outline',
+    link: '/pages/projects',
+  },
+  {
+    title: 'Assessments',
+    icon: 'clipboard-outline',
+    link: '/pages/assessments',
+  },
+  {
+    title: 'Daily Status Reports',
+    icon: 'clipboard-outline',
+    link: '/pages/dsrs',
+  }/*,
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',
-    home: true,
   },
   {
     title: 'IoT Dashboard',
@@ -243,5 +309,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
+  },*/
 ];

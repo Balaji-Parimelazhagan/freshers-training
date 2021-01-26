@@ -11,6 +11,8 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,6 +22,10 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+
+import { StoreModule } from '@ngrx/store';
+import { AppDataStoreStateKeys } from './pages/store/app-store.state';
+import { appDataReducers } from './pages/store/app-store.reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +45,11 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    NgSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({}),
+    StoreModule.forFeature(AppDataStoreStateKeys.store, appDataReducers)
   ],
   bootstrap: [AppComponent],
 })

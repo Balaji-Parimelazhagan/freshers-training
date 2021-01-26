@@ -1,0 +1,48 @@
+<div class="accordion-container col-12 col-sm 12 col-md-12 col-lg-12 col-xxxl-12">
+    
+  <div class="month-seperator">January, 2021</div>
+	<div class="col-md-12 dsr-container" *ngFor="let status of dailyStatusReports; index as i;" >
+    <div class="task-title"
+        [ngClass]="status.tasktStatus == 'open'? 'task-open' : '' || status.tasktStatus == 'inProgress'? 'task-inProgress' : '' || status.tasktStatus == 'completed'? 'task-completed' : ''">
+        {{status.task}}
+    </div>
+		<div class="dsr-date" (click)="toggleDSRDetailsDiv(i)">{{status.reportedOn}}</div>
+    <div class="dsr-content col-7 col-sm 7 col-md-7 col-lg-7 col-xxxl-7">
+      <div class="ellipsed-content" [hidden]="status.isDSRDetailDisplayed">{{status.description}}</div>
+      <div [ngClass]="status.isDSRDetailDisplayed? 'show-dsr-details' : 'hide-dsr-details'">
+        
+        <nb-tabset [hidden]="!status.isDSRDetailDisplayed">
+          <nb-tab tabTitle="Status Details">
+            {{status.description}}
+          </nb-tab>
+          <nb-tab tabTitle="Comments">
+            <nb-card [hidden]="!status.isDSRDetailDisplayed">
+              <nb-card-body>				
+              <div class="chat-container col-md-12 col-lg-12 col-xxxl-12">
+                <nb-chat size="small" status="primary">
+                  <nb-chat-message *ngFor="let msg of messages"
+                                  [type]="msg.type"
+                                  [message]="msg.text"
+                                  [reply]="msg.reply"
+                                  [sender]="msg.user.name"
+                                  [date]="msg.date"
+                                  [files]="msg.files"
+                                  [quote]="msg.quote"
+                                  [latitude]="msg.latitude"
+                                  [longitude]="msg.longitude"
+                                  [avatar]="msg.user.avatar">
+                  </nb-chat-message>
+                  <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+                  </nb-chat-form>
+                </nb-chat>
+              </div>
+            </nb-card-body>
+            </nb-card>
+          </nb-tab>
+        </nb-tabset>
+      </div>
+    </div>
+	</div>
+  
+</div>
+<button nbButton routerLink="../report-today-status" class="appearance-outline report-status">Report Status</button>

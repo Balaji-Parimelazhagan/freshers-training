@@ -1,0 +1,56 @@
+<!-- <nb-card class="col-sm-6 floating-tool-bar">
+  <nb-card-body>
+    <div class="row">
+      <div class="col-5">
+        <input nbInput fullWidth shape="round" placeholder="Search Assessment">
+      </div>
+      <div class="col-4">
+        <label for="filter">Filter By:</label>
+        <nb-select selected="1" id="filter">
+          <nb-option value="1">Team</nb-option>
+          <nb-option value="2">Batch</nb-option>
+          <nb-option value="3">Trainee</nb-option>
+        </nb-select>
+      </div>
+      <div class="col-3">
+        <button nbButton routerLink="../new-assessment" class="status-primary new-action-btn">New Assessment</button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card> -->
+
+<nb-card class="p-0 col-12 m-auto">
+  <nb-card-header class="col-5 p-0 floating-tool-bar">
+      <div class="row toolbar-container">
+        <div class="col-7">
+          <input nbInput fullWidth shape="round" class="search" placeholder="Search Assessment">
+        </div>
+        <div class="col-5">
+          <button nbButton routerLink="../new-assessment" class="status-primary new-action-btn">New Assessment</button>
+        </div>
+      </div>
+    </nb-card-header> 
+    <nb-card-body class='p-0'>
+      <nb-card class='p-0 assessment-container'>
+        <nb-card-header class=" row show-grid assessment-header">
+          <div class="col-md-2">Ass.-Id</div>
+          <div class="col-md-2">Title</div>
+          <div class="col-md-2">Assessment Date</div>
+          <div class="col-md-2">Assessed Skill</div>
+          <div class="col-md-1">Weightage</div>
+          <div class="col-md-1">Status</div>
+          <div *ngIf="role !== 'trainee'" class="col-md-2">Complete/View Assessment</div>
+        </nb-card-header>
+        <nb-card-body class="row show-grid assessment" *ngFor="let assessment of assessments ; index as i;">
+          <div class="col-md-2">ASMT-{{+i + 1}}</div>
+          <div class="col-md-2">{{assessment.title}}</div>
+          <div class="col-md-2">{{assessment.assessmentDate}}</div>
+          <div class="col-md-2">{{assessment.assessedSkill}}</div>
+          <div class="col-md-1 uppr-cs">{{assessment.weightage}}</div>
+          <div class="col-md-1 uppr-cs">{{assessment.status}}</div>
+          <div *ngIf="role !== 'trainee' && !assessment.isCompleted" routerLink="../complete-assessment" class="col-md-2 action-btn"><i class="fas fa-pen"></i></div>
+          <div *ngIf="role !== 'trainee' && assessment.isCompleted" routerLink="../assessment-details" class="col-md-2 action-btn"><i class="fas fa-eye"></i></div>
+        </nb-card-body>
+      </nb-card>
+    </nb-card-body>  
+  </nb-card>
